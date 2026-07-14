@@ -4,8 +4,10 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px;
   user-select: none;
+  width: 100%;
 }
 
 .container {
@@ -17,13 +19,16 @@ body {
   justify-content: center;
   padding: 30px;
   position: relative;
+  width: min(100%, 460px);
 }
 
 h2 {
-  text-shadow: 2px 2px 2px #000;
   color: #ffd700;
-  font-size: 3em;
+  font-size: clamp(1.1rem, 3vw, 3rem);
   letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
   text-transform: uppercase;
 }
 
@@ -33,8 +38,8 @@ h2 {
   border-radius: 10px;
   color: #000;
   cursor: pointer;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
   font-weight: 600;
-  font-size: 1.5em;
   letter-spacing: 0.1em;
   padding: 15px 20px;
   text-transform: uppercase;
@@ -97,6 +102,15 @@ h2 {
 }
 
 @media screen and (max-width: 700px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    gap: 20px;
+    padding: 20px 12px;
+  }
+
   .game {
     height: 310px;
     width: 310px;
@@ -106,5 +120,9 @@ h2 {
   .item > img {
     height: 70px;
     width: 70px;
+  }
+
+  .reset {
+    max-width: 320px;
   }
 }
